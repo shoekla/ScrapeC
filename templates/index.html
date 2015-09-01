@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://getbootstrap.com/2.3.2/examples/hero.html -->
+<html lang="en"><head>
+   
+    <title>ScrapeC Home</title>
+  
+
+<link rel="shortcut icon" href="vector.png" type="image/png" >
+  <link rel="shortcut icon" href="{{ url_for('static', filename='vector.png') }}">
+ 
+    <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+/*
+This was made by João Sardinha
+Visit me at http://johnsardine.com/
+
+The table style doesnt contain images, it contains gradients for browsers who support them as well as round corners and drop shadows.
+
+It has been tested in all major browsers.
+
+This table style is based on Simple Little Table By Orman Clark,
+you can download a PSD version of this at his website, PremiumPixels.
+http://www.premiumpixels.com/simple-little-table-psd/
+
+PLEASE CONTINUE READING AS THIS CONTAINS IMPORTANT NOTES
+
+*/
+
+/*
+Im reseting this style for optimal view using Eric Meyer's CSS Reset - http://meyerweb.com/eric/tools/css/reset/
+------------------------------------------------------------------ */
+
+/*------------------------------------------------------------------ */
+
+
+/*
+Table Style - This is what you want
+------------------------------------------------------------------ */
+table a:link {
+  color: #666;
+  font-weight: bold;
+  text-decoration:none;
+}
+table a:visited {
+  color: #999999;
+  font-weight:bold;
+  text-decoration:none;
+}
+table a:active,
+table a:hover {
+  color: #bd5a35;
+  text-decoration:underline;
+}
+table {
+  font-family:Arial, Helvetica, sans-serif;
+  color:#666;
+  font-size:12px;
+  text-shadow: 1px 1px 0px #fff;
+  background:#eaebec;
+  margin:20px;
+  border:#ccc 1px solid;
+
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+
+  -moz-box-shadow: 0 1px 2px #d1d1d1;
+  -webkit-box-shadow: 0 1px 2px #d1d1d1;
+  box-shadow: 0 1px 2px #d1d1d1;
+}
+table th {
+  padding:21px 25px 22px 25px;
+  border-top:1px solid #fafafa;
+  border-bottom:1px solid #e0e0e0;
+
+  background: #ededed;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+  background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+}
+table th:first-child{
+  text-align: left;
+  padding-left:20px;
+}
+table tr:first-child th:first-child{
+  -moz-border-radius-topleft:3px;
+  -webkit-border-top-left-radius:3px;
+  border-top-left-radius:3px;
+}
+table tr:first-child th:last-child{
+  -moz-border-radius-topright:3px;
+  -webkit-border-top-right-radius:3px;
+  border-top-right-radius:3px;
+}
+table tr{
+  text-align: center;
+  padding-left:20px;
+}
+table tr td:first-child{
+  text-align: left;
+  padding-left:20px;
+  border-left: 0;
+}
+table tr td {
+  padding:18px;
+  border-top: 1px solid #ffffff;
+  border-bottom:1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  
+  background: #fafafa;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+  background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
+}
+table tr.even td{
+  background: #f6f6f6;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
+  background: -moz-linear-gradient(top,  #f8f8f8,  #f6f6f6);
+}
+table tr:last-child td{
+  border-bottom:0;
+}
+table tr:last-child td:first-child{
+  -moz-border-radius-bottomleft:3px;
+  -webkit-border-bottom-left-radius:3px;
+  border-bottom-left-radius:3px;
+}
+table tr:last-child td:last-child{
+  -moz-border-radius-bottomright:3px;
+  -webkit-border-bottom-right-radius:3px;
+  border-bottom-right-radius:3px;
+}
+table tr:hover td{
+  background: #f2f2f2;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
+  background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);  
+}
+#conA {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.footer, .push {
+  height: 155px; /* .push must be the same height as .footer */
+}
+
+#conA {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+   /* Set the fixed height of the footer here */
+      #push,
+      #footer {
+        height: 60px;
+      }
+      #footer {
+        background-color: #f5f5f5;
+      }
+
+      /* Lastly, apply responsive CSS fixes as necessary */
+      @media (max-width: 767px) {
+        #footer {
+          margin-left: -20px;
+          margin-right: -20px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+</style>
+                                
+  </head>
+
+  <body  style="overflow:hidden;">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="/" style="color: white">ScrapeC</a>
+          <div class="nav-collapse collapse" style="float:right">
+            <ul class="nav">
+              <li class="active"><a href="/">Home</a></li>
+              
+             <li><a href="/">About</a></li>
+              <li><a href="/">Contact</a></li>
+                  <li><a href="https://github.com/abir123" target="_blank">Github</a></li>
+            </ul>
+           
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="container" id="conA"><center>
+        <h2>ScrapeC</h2>
+   
+        <!--<form action="." method="POST">
+            <input type="text" name="text" placeholder="Enter URL (Search Query Coming Soon!)" style="width:50%">
+
+            <br/> 
+               <a data-toggle="modal" href="#URL">URL or Search Query?</a><br/>
+               <input type="submit" style="visibility: hidden;"/>
+        </form>-->
+        <form action="." method="POST">
+        <input type="text" name="name" placeholder="Enter URL or Search Query" style="width:50%">
+        <br/>
+          <p><select name="what" style="left:10%">
+            <option value="nothing">What to Find?</option>
+<option value="links">Links</option>
+<option value="info">Information From Links</option>
+<option value="pdf">PDFs</option>
+<option value="image">Images</option>
+<option value="video">Videos</option>
+<option value="contact">Contact Information</option>
+<option value="social">Social Media Information</option>
+
+
+
+</select>
+        <input type="submit" name="my-form" value="Start ScrapeC" style="right:60%">
+</p>
+    </form>
+<a data-toggle="modal" href="#URL">URL or Search Query?</a><br/>
+               <input type="submit" style="visibility: hidden;"/>
+
+</center>
+
+
+    </div> <!-- /container -->
+    <div class="push"></div>
+
+    </div><div class="push"></div>
+
+    </div>
+    <div class="push"></div>
+
+    
+    <div class-"footer">
+     <p><br/><br/>
+   <div id="footer">
+      <div class="container"><br/>
+        <p class="muted credit">Developed By: <a href="/about" style="color:green">Abir Shukla</a></p>
+
+      </div>
+    </div>
+
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+  
+
+</body></html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://getbootstrap.com/2.3.2/examples/hero.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+    <title>ScrapeC Results</title>
+  
+
+  <link rel="shortcut icon" href="{{ url_for('static', filename='vector.png') }}">
+  <!--   Le styles -->
+    <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+#conA {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.footer, .push {
+  height: 155px; /* .push must be the same height as .footer */
+}
+
+#conA {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+   /* Set the fixed height of the footer here */
+      #push,
+      #footer {
+        height: 60px;
+      }
+      #footer {
+        background-color: #f5f5f5;
+      }
+
+      /* Lastly, apply responsive CSS fixes as necessary */
+      @media (max-width: 767px) {
+        #footer {
+          margin-left: -20px;
+          margin-right: -20px;
+          padding-left: 20px;
+          padding-right: 20px;
+          bottom:0;
+        }
+      }
+
+</style>
+                                
+  </head>
+
+  <body style="overflow-x: hidden;">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="/home" style="color: white">ScrapeC</a>
+          <div class="nav-collapse collapse" style="float:right">
+            <ul class="nav">
+              <li><a href="/home">Home</a></li>
+           <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contact</a></li>
+                  <li><a href="https://github.com/abir123" target="_blank">Github</a></li>
+            </ul>
+           
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>  <div class="container">
+    <p>      <form action="." method="POST">
+        <input type="text" name="name" placeholder="Enter URL or Search Query"  value="{{name}}"style="width:50%">
+        <select name="what" style="left:10%">
+            <option value="nothing">What to Find?</option>
+            {% if what=="PDFs Aggregated" %}
+<option value="links">Links</option>
+<option value="info">Information From Links</option>
+<option value="pdf" selected="selected">PDFs</option>
+<option value="image">Images</option>
+<option value="video">Videos</option>
+<option value="contact">Contact Information</option>
+<option value="social">Social Media Information</option>
+{% endif %}
+
+{% if what=="Link Aggregated" %}
+<option value="links" selected="selected">Links</option>
+<option value="info">Information From Links</option>
+<option value="pdf">PDFs</option>
+<option value="image">Images</option>
+<option value="video">Videos</option>
+<option value="contact">Contact Information</option>
+<option value="social">Social Media Information</option>
+{% endif %}
+
+{% if what=="Videos Aggregated" %}
+<option value="links">Links</option>
+<option value="info">Information From Links</option>
+<option value="pdf">PDFs</option>
+<option value="image">Images</option>
+<option value="video" selected="selected">Videos</option>
+<option value="contact">Contact Information</option>
+<option value="social">Social Media Information</option>
+{% endif %}
+
+
+{% if what=="Images" %}
+<option value="links">Links</option>
+<option value="info">Information From Links</option>
+<option value="pdf">PDFs</option>
+<option value="image" selected="selected">Images</option>
+<option value="video">Videos</option>
+<option value="contact">Contact Information</option>
+<option value="social">Social Media Information</option>
+{% endif %}
+
+
+ {% if what=="Information Aggregated" %}
+
+ <option value="links">Links</option>
+<option value="info" selected="selected">Information From Links</option>
+<option value="pdf">PDFs</option>
+<option value="image">Images</option>
+<option value="video">Videos</option>
+<option value="contact">Contact Information</option>
+<option value="social">Social Media Information</option>
+{% endif %}
+
+ {% if what=="Contact Information"%}
+  <option value="links">Links</option>
+<option value="info">Information From Links</option>
+<option value="pdf">PDFs</option>
+<option value="image">Images</option>
+<option value="video">Videos</option>
+<option value="contact" selected="selected">Contact Information</option>
+<option value="social">Social Media Information</option>
+{% endif %}
+
+
+   {% if what=="Contact Information From Link"%}
+  <option value="links">Links</option>
+<option value="info">Information From Links</option>
+<option value="pdf">PDFs</option>
+<option value="image">Images</option>
+<option value="video">Videos</option>
+<option value="contact" selected="selected">Contact Information</option>
+<option value="social">Social Media Information</option>
+{% endif %}
+{% if what=="Social Media"%}
+<option value="links">Links</option>
+<option value="info">Information From Links</option>
+<option value="pdf">PDFs</option>
+<option value="image">Images</option>
+<option value="video">Videos</option>
+<option value="contact">Contact Information</option>
+<option value="social" selected="selected">Social Media Information</option>
+{% endif %}
+
+</select>
+        <input type="submit" name="my-form" value="Start ScrapeC" style="right:60%">
+
+    </form></p><hr>
+    <p> <span style="float:left">{{length}} Results for "{{what}} of {{name}}"</span><span style="float:right">Total Time: {{timeA}} seconds
+</p><br/><hr>
+{% if what=="Link Aggregated" %}
+{% for url in res %}
+<a href='{{url}}' target="_blank">{{url}}</a>
+<br/><br/>
+{% endfor %}
+
+ {% endif %} 
+
+
+
+ {% if what=="PDFs Aggregated" %}
+{% for url in res %}
+<a href='{{url}}' target="_blank">{{url}}</a>
+<br/><br/>
+{% endfor %}
+
+ {% endif %} 
+
+
+{% if what=="Videos Aggregated" %}
+{% for vid in res %}
+
+<iframe width="560" height="315" src="{{vid}}" frameborder="0" allowfullscreen></iframe>
+{% endfor %}
+
+ {% endif %}
+
+
+{% if what=="Images" %}
+{% for image in res %}
+<a href="{{image}}"><img src="{{image}}" style="height:170px;width:170" border="2" id="thumbnailImage"/></a>
+{% endfor %}
+
+ {% endif %}
+
+
+
+
+ {% if what=="Information Aggregated" %}
+  
+{% for url in res %}
+
+<a href="{{url[0][0]}}" target="_blank">{{url[0][0]}}</a><br/>
+<p style="padding-left:5em">{{url[1][0]}}</p><br/><br/>
+<br/><br/>
+
+{% endfor %}
+
+
+ {% endif %}
+
+  {% if what=="Contact Information"%}
+
+{% for url in res %}
+
+Link:<a href="{{url[0][0]}}" target="_blank"> {{url[0][0]}}</a><br/><br/>
+{% for link in url[1][0] %}
+{% if "@" in link %}
+<p style="padding-left:5em">Email: <a href="mailto:{{link}}">{{link}}</a></p>
+ {% endif %}
+ {% if "Phone" in link %}
+ <p style="padding-left:5em">{{link}}</p>
+ {% endif %}
+ {% if "Fax" in link %}
+ <p style="padding-left:5em">{{link}}</p>
+ {% endif %}
+
+
+
+{% endfor %}<br/>
+{% endfor %}
+
+ {% endif %}
+
+
+   {% if what=="Contact Information From Link"%}
+
+{% for url in res %}
+
+Link:<a href="{{url[0][0]}}" target="_blank"> {{url[0][0]}}</a><br/><br/>
+{% for link in url[1] %}
+{% if "@" in link %}
+<p style="padding-left:5em">Email: <a href="mailto:{{link}}">{{link}}</a></p>
+ {% endif %}
+ {% if "Phone" in link %}
+ <p style="padding-left:5em">{{link}}</p>
+ {% endif %}
+ {% if "Fax" in link %}
+ <p style="padding-left:5em">{{link}}</p>
+ {% endif %}
+
+{% endfor %}<br/>
+{% endfor %}
+
+ {% endif %}
+
+
+
+  
+  {% if what=="Social Media"%}
+       <center>
+
+  
+
+
+<!--{% if error%}<p style="color:red">Error Occured</p>  {% endif %}-->
+
+
+
+<a href="{{face}}" target="_blank"><button>Take me to Facebook</button></a>
+
+<a href="{{gog}}" target="_blank"><button>Take me to Google-Plus</button></a>
+
+<a href="{{twit}}" target="_blank"><button>Take me to Twitter</button></a>
+
+</center><br/>
+
+{% for url in res %}
+<a href='{{url}}' target="_blank">{{url}}</a>
+<br/><br/>
+
+{% endfor %}
+
+ {% endif %}
+
+
+
+</div>
+<p><br/><br/><br/>
+
+    
+
+    
+    <div class-"footer">
+     <p><br/><br/>
+   <div id="footer">
+      <div class="container"><br/>
+        <p class="muted credit">Developed By: <a href="/about" style="color:green">Abir Shukla</a></p>
+
+      </div>
+    </div>
+
+    </div>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+ <script>
+
+$("#thumbnailImage").click(function() {
+   $(this).attr('width', '500');
+    $(this).attr('height', '400');
+});
+ </script>
+
+  
+
+</body></html>
