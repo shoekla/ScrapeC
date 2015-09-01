@@ -8,7 +8,6 @@ import string
 from bs4 import BeautifulSoup
 from urllib2 import urlopen
 import os
-fil1=open("Test.txt","w")
 def is_in_arr(lis,s):
 	result=False
 	for item in lis:
@@ -794,7 +793,9 @@ def linkVid(url):
 #print removeBrac(name)
 #print contactsA("Ut Facutly")
 #print SearchInfo("The Dark Knight Rises")
-"""res= getDataTwo("https://en.wikipedia.org/wiki/Christopher_Nolan")
+"""
+Tests Below
+res= getDataTwo("https://en.wikipedia.org/wiki/Christopher_Nolan")
 print res[0]			
 
 name=
